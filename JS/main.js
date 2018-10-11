@@ -1,7 +1,29 @@
 console.log("Up and running!");
 
 //cardArray
-var cards = ['queenOfDiamond', 'queenOfHeart', 'kingOfHeart', 'kingOfDiamond'];
+var cards = [
+  {
+    rank: "queen",
+    suit: "diamond",
+    cardImage: "images/queen-of-diamonds.png"
+  },
+  {
+    rank: "queen",
+    suit: "heart",
+    cardImage: "images/queen-of-hearts.png"
+  },
+  {
+    rank: "king",
+    suit: "diamond",
+    cardImage: "images/king-of-diamonds.png"
+  },
+  {
+    rank: "king",
+    suit: "heart",
+    cardImage: "images/king-of-hearts.png"
+  }
+];
+
 var cardsInPlay = [];
 
 //function
@@ -19,8 +41,11 @@ var flipCards = function(cardId) {
     alert("You found a match!");
   } else {
     alert("Sorry, try again.");
-  } console.log("User flipped" + cards[cardId]);
-  cardsInPlay.push(cards[cardId])
+  }
+  console.log("User flipped" + cards[cardId].rank);
+  cardsInPlay.push(cards[cardId].rank);
+  console.log(cards[cardId].cardImage);
+  console.log(cards[cardId].suit);
   checkForMatch();
 
 }
