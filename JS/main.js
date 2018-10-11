@@ -3,23 +3,36 @@ console.log("Up and running!");
 //cardArray
 var cards = ['queenOfDiamond', 'queenOfHeart', 'kingOfHeart', 'kingOfDiamond'];
 var cardsInPlay = [];
-var cardOne = cards[0];
-var cardTwo = cards[1]
-//add cards to array
-cardsInPlay.push(cards[0]);
-cardsInPlay.push(cards[1]);
 
-//user flipped cards
-console.log("User flipped" + ' ' + cards[0]);
-console.log("User flipped" + ' ' + cards[1]);
-
-//if statements
-if (cardsInPlay.length === 2) {
-  (cardsInPlay[0] === cardsInPlay[1]);
-  alert("You found a match!");
+//function
+var checkForMatch = function() {
+  if (cardsInPlay[0] === cardsInPlay[1]) {
+console.log("You found a match!");
 } else {
-  alert("Sorry, try again.");
+console.log("Sorry, try again.");
 }
+}
+
+var flipCards = function(cardId) {
+  if (cardsInPlay.length === 2) {
+    (cardsInPlay[0] === cardsInPlay[1]);
+    alert("You found a match!");
+  } else {
+    alert("Sorry, try again.");
+  } console.log("User flipped" + cards[cardId]);
+  cardsInPlay.push(cards[cardId])
+  checkForMatch();
+
+}
+flipCards(0);
+flipCards(2);
+
+
+
+
+
+
+
   //console.log('you have selected two cards');
   //if (cardsInPlay[0] === cardsInPlay[1]) {
     //alert('you found a match!!')
